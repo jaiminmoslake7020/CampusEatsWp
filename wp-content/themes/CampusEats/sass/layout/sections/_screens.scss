@@ -1,0 +1,172 @@
+.screens{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+
+    .section-title{
+        text-align: left;
+        margin-top: 0;
+        font-size: 30px;
+        padding-top: 15px;
+        padding-left: 20px;
+    }
+
+    .sub-section{
+       height: 100vh;
+       display: flex;
+       flex-flow: row nowrap;
+
+       .screen-item{
+           position: relative;
+           min-height: 100vh;
+           min-width: 0;
+           margin-left: 50px;
+           box-sizing: border-box;
+           flex: 0 0 0;
+           transition: flex 700ms linear;
+
+           &.active{
+               flex: 1 0 40vw;
+               margin-left: 0;
+
+               .article-title{
+                   text-align: center;
+                   margin-top: 0;
+                   color: $color__orange;
+
+                   background-color: transparent;
+                   padding: 15px;
+                   width: 100%;
+                   box-sizing: border-box;
+                   font-size: 20px;
+
+                   position: absolute;
+                   top:0;
+                   left: 0;
+                   min-width: 300px;
+                   transform-origin: 0 0;
+                   transform: rotate(0deg);
+
+                   span{
+                       transform: unset;
+                       display: unset;
+                       padding: unset;
+                       font-weight: unset;
+                       text-transform: unset;
+                   }
+               }
+
+               .screen-box{
+                   opacity: 1;
+                   margin-top: 60px;
+
+                   &.active{
+
+                       .screen-regular{
+                           opacity: 1;
+
+                           img{
+                               opacity: 1;
+                               transform: scale3d(0.3,0.3,0.3);
+                               transition: transform 1.5s cubic-bezier(1, -0.51, 0, 1.56) 300ms, margin-top 100ms ease-in-out 0ms;
+                           }
+
+                           &.active{
+
+                               img{
+                                   height: 80vh;
+                                   width: auto;
+                                   margin: auto;
+                                   transform: scale3d(1,1,1);
+                               }
+
+                           }
+
+                       }
+
+                   }
+
+                   .screen-regular{
+                       opacity: 0;
+                       text-align: center;
+
+
+                       img{
+                           transition: margin-top 1s linear 100ms,opacity 2s linear 50ms;
+                       }
+
+                   }
+
+
+               }
+
+           }
+
+           .screen-box{
+               opacity: 0;
+               transition: opacity 100ms linear 0ms;
+               height: 100vh;
+               overflow: hidden;
+
+               &.active{
+
+                   .screen-regular{
+                       opacity: 0;
+                       text-align: center;
+
+                       img{
+                           opacity: 0;
+                           transition: opacity 1s linear 100s;
+                           transform: scale3d(0.3,0.3,0.3);
+                           margin-top: -130vh;
+                       }
+
+                   }
+
+               }
+
+               .screen-regular{
+                   opacity: 0;
+                   text-align: center;
+
+                   img{
+                       opacity: 0;
+                       transition: opacity 1s linear 100s;
+                       transform: scale3d(0.3,0.3,0.3);
+                       margin-top: -130vh;
+                   }
+
+               }
+
+           }
+
+           .article-title{
+               text-align: center;
+               margin-top: 0px;
+               transform-origin: 0 0;
+               transform: rotate(90deg);
+               position: absolute;
+               top:0;
+               left: 0;
+               width: 100vh;
+               background-color: $color__orange;
+               padding: 15px;
+               box-sizing: border-box;
+               cursor:pointer;
+
+               span{
+                   transform: rotateZ(-90deg);
+                   display: inline-block;
+                   padding: 0 5px;
+                   font-weight: bold;
+                   text-transform: uppercase;
+               }
+
+           }
+
+       }
+
+    }
+
+}
