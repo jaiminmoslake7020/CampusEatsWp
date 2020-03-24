@@ -11,5 +11,4 @@ get_template_part('template-parts/sections/section','team');
 
 get_footer();
 
-
 ?>

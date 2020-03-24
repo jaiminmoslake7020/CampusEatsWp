@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $color__white;
+  color: $color__black;
+  font-family: $font__sans;
+}
+
+.main-section{
+  min-height: 100vh;
+  background-color: $color__orange ;
+  overflow: hidden;
+}
+
+.main-section.alternate{
+  background-color: $color__white ;
+}
+
+.section-title{
+  font-weight: 300;
+  color: $color__white;
+  text-align: left;
+  margin-top: 0;
+  font-size: 30px;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
+.main-section.alternate .section-title{
+  color: $color__orange;
+}
+
+.article-title{
+  font-weight: 100;
+  color: $color__orange;
+}
+
+.main-section.alternate .article-title{
+  color: $color__white;
+}
+
+/* SECTIONS ============ */
+
+/* SCREEN SECTION ============ */
+@import "sections/screens";
+
+/* TOP SECTION ============ */
+@import "sections/top";
+
+/* TOP SECTION ============ */
+@import "sections/needs";
+
+/* TEAM SECTION =========== */
+@import "sections/team";
+
+
