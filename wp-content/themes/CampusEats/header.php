@@ -8,20 +8,22 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header class="site-header">
-    <div class="blog-info" >
-        <h1><a href="<?php site_url();?>" ><?php bloginfo('name');?></a>&nbsp;<span><?php bloginfo('description');?></span></h1>
+
+<header>
+    <div class="site-header">
+        <h1><img src="images/LogoCampusEats.png" alt="logo" class="logopng"></h1>
+        <nav class="header-menu">
+            <ul>
+                <li><a href="">Cafes</a></li>
+                <li><a href="">Features</a></li>
+                <li><a href="">Needs</a></li>
+                <li><a href="">Screens</a></li>
+                <li><a href="">Team</a></li>
+                <li><a href="">Testimonials</a></li>
+            </ul>
+        </nav>
     </div>
-	<?php
-        wp_nav_menu([
-            'theme_location'=>'top-menu',
-            'menu_class'=>'menu-primary-ul menu additional-menu ',
-            'container'=>'nav',
-            'container_class'=>'menu-primary-top',
-            'link_before'=>'<span class="visually-hidden">',
-            'link_end'=>'</span>',
-        ]);
-	?>
 </header>
-<div id="primary" class="content-area">
+
+
   <main id="main" class="site-main">

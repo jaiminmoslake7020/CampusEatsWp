@@ -30,7 +30,7 @@ add_action('after_setup_theme', 'CampusEats_setup');
 
 function loadCss(){
 	wp_enqueue_style('theme_style', get_stylesheet_uri());
-	wp_register_style('fonts','https://fonts.googleapis.com/css?family=Bebas+Neue|Libre+Baskerville&display=swap',['theme_style']);
+	wp_register_style('fonts','https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap',['theme_style']);
     wp_register_style('myStyles',get_template_directory_uri().'/sass/style.css',["fonts"]);
     wp_register_style('myStyles',get_template_directory_uri().'style.css',["fonts"]);
 	wp_enqueue_style( "myStyles" );
