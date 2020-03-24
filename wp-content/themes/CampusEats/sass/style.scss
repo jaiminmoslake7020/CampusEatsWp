@@ -1,0 +1,50 @@
+/*
+Theme Name: CampusEats
+Author: Awesome 7
+Description: Theming baics
+Version: 1.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: CampusEats
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/*
+  RESET ==============================
+  JAIMIN
+
+/usr/local/bin/sass /Applications/MAMP/htdocs/CampusEatsMobileApp/www/css/style.scss /Applications/MAMP/htdocs/CampusEatsMobileApp/www/css/style.css
+/usr/local/bin/sass /Applications/MAMP/htdocs/CampusEatsMobileApp/www/css/style.scss /Applications/MAMP/htdocs/CampusEatsMobileApp/www/css/style.css
+
+*/
+
+/* normalize ======================= */
+@import "normalize";
+/* variables ======================= */
+@import "variables/variables";
+/* typography ======================= */
+@import "typography/typography";
+/* layout ======================= */
+@import "layout/layout";
+/* layout ======================= */
+@import "elements/elements";
+/* Navigation ======================= */
+@import "navigation/navigation";
+/* site ======================= */
+@import "site/site";
+/* forms ======================= */
+@import "forms/forms";
+/* media ======================= */
+@import "media/media";
+
+
+
+
+
+
+
+
+
+
+
