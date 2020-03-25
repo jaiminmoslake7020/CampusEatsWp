@@ -1,5 +1,5 @@
 <?php ?>
-<section id="screen-content" class="screens main-section alternate " >
+<section id="screen-content" class="screens main-section  " >
 	<h3 class=" section-title" >Screens</h3>
 	<section class="sub-section" >
 		<?php

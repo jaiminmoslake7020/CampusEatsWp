@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="footer-information">
-            <h2><?php the_title(); ?>></h2>
+            <h2>Tags: </h2>
 
 	        <?php wp_nav_menu([
 		        'theme_location'=>'bottom-left-menu',
@@ -32,7 +32,7 @@
                     <button>Subscribe</button>
                 </form>
             </div>
-            <h2><?php the_title(); ?>></h2>
+            <h2>Contact Us @</h2>
             <p>
                 <i class="fas fa-envelope"></i>
                 <!-- https://fontawesome.com/icons/envelope?style=solid -->

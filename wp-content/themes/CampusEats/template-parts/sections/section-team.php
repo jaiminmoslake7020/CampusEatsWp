@@ -21,7 +21,7 @@
                 }
                 ?>
                 <div <?= $activeCLass ; ?>  <?php implode('  ', get_post_class());  ?> ">
-                    <img src="<?php the_post_thumbnail_url(); ?>"
+                    <img src="<?php the_post_thumbnail_url(); ?>"/>
                      <p><?php the_title(); ?></p>
                      <h3><?php the_content(); ?></h3>
                 </div>

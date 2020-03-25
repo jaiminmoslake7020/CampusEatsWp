@@ -1,7 +1,7 @@
 <section id="top-content" class="top main-section alternate ">
     <section class="sub-section">
         <div class="app-info">
-            <h4 class="article-title"><?php the_title(); ?></h4>
+            <h4 class="article-title">Connecting all the Langara cafes.</h4>
             <div class=" app-cafes ">
 				<?php
 				$args        = array(
@@ -33,7 +33,7 @@
                 <div class="screen-box">
                     <div class="screen-regular">
 	                    <?php
-	                    $args        = array(
+	                    $args = array(
 		                    'category_name' => 'Screens',
                             'posts_per_page'=>1,
                             'order_by'=>'rand'

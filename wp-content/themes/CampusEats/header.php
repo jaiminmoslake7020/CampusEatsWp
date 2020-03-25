@@ -9,8 +9,16 @@
 <body <?php body_class(); ?>>
 <header>
     <div class="site-header">
-        <h1><img src="images/LogoCampusEats.png" alt="logo" class="logopng"></h1>
-        <?php wp_nav_menu([
+        <h1>
+        <?php
+            if ( has_custom_logo() ) {
+                echo get_custom_logo();
+            } else {
+                echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+            }
+        ?>
+        </h1>
+        <?php wp_nav_menu ([
         'theme_location'=>'top-menu',
         'menu_class'=>'menu-primary-ul menu additional-menu ',
         'container'=>'nav',
@@ -19,8 +27,6 @@
             'link_end'=>'</span>',
         ]);?>
     </div>
-	<?php
 
-	?>
 </header>
 <main>
