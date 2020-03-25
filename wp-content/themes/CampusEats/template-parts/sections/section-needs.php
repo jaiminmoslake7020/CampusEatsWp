@@ -1,34 +1,60 @@
+<?php ?>
 <section id="needs-content" class="needs main-section  " >
     <section class="sub-section" >
         <p class="question" >Why CampusEats?</p>
         <div class="answer-box">
-<!--            <div class="answers answer-1 " >-->
-<!--                <div class="icon-box" >-->
-<!--                    <i class=" fas fa-search "></i>-->
-<!--                </div>-->
-<!--                <div class="text-info">-->
-<!--                    <p class=" answer-text " >Average time to order food/bevarges are around 9 minutes, with the range spread between 7 minutes (best) and 14 minutes (worst).</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="answers answer-2 " >-->
-<!--                <div class="icon-box" >-->
-<!--                    <i class=" fas fa-search "></i>-->
-<!--                </div>-->
-<!--                <div class="text-info">-->
-<!--                    <p class="  answer-text " >Vendor apps only allows to order from their own store. Such as Tim Horton and Subway etc.</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="answers answer-3 " >-->
-<!--                <div class="icon-box" >-->
-<!--                    <i class=" fas fa-search "></i>-->
-<!--                </div>-->
-<!--                <div class="text-info">-->
-<!--                    <p class="  answer-text " >Food ordering apps are not good fit for campus ordering.</p>-->
-<!--                </div>-->
-<!--            </div>-->
+	        <?php
 
-<!--            Convert this answers into post there should be post ready created by jagddep -->
+                $args = array (
+                    'category_name'     => 'Needs',
+                    'orderby' => ''
+                );
+                $needs_query = new WP_Query( $args );
 
+
+                $i = 0 ;
+                if ($needs_query->have_posts() ) :
+                    while ( $needs_query->have_posts() ) :
+                        $needs_query->the_post();
+
+                        $activeCLass = "" ;
+                        if( $i == 0 ){
+                            $activeCLass = ' active ' ;
+                        }
+                        ?>
+
+                        <div class="answers answer-1 <?php implode('  ', get_post_class());  ?> " >
+                            <div class="icon-box" >
+                                <i class=" fas fa-search "></i>
+                            </div>
+                            <div class="text-info">
+                                <p class=" answer-text " ><?php the_content(); ?></p>
+                            </div>
+                        </div>
+
+                        <div class="answers answer-2 <?php implode('  ', get_post_class());  ?> " >
+                            <div class="icon-box" >
+                                <i class=" fas fa-search "></i>
+                            </div>
+                            <div class="text-info">
+                                <p class=" answer-text " ><?php the_content(); ?></p>
+                            </div>
+                        </div>
+
+                        <div class="answers answer-3 <?php implode('  ', get_post_class());  ?> " >
+                            <div class="icon-box" >
+                                <i class=" fas fa-search "></i>
+                            </div>
+                            <div class="text-info">
+                                <p class=" answer-text " ><?php the_content(); ?></p>
+                            </div>
+                        </div>
+
+                        <?php
+                        $i++;
+                    endwhile;
+                endif;
+	        ?>
         </div>
     </section>
 </section>

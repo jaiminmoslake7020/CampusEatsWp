@@ -1,3 +1,4 @@
+<?php ?>
 <section id="features-content" class="features main-section alternate " >
     <h3 class=" section-title" >Features</h3>
     <section class="sub-section" >
