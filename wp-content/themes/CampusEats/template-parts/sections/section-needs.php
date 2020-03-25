@@ -11,7 +11,6 @@
                 );
                 $needs_query = new WP_Query( $args );
 
-
                 $i = 0 ;
                 if ($needs_query->have_posts() ) :
                     while ( $needs_query->have_posts() ) :
@@ -22,8 +21,7 @@
                             $activeCLass = ' active ' ;
                         }
                         ?>
-
-                        <div class="answers answer-1 <?php implode('  ', get_post_class());  ?> " >
+                        <div class="answers answer-<?= ($i+1); ?> <?php implode('  ', get_post_class());  ?> " >
                             <div class="icon-box" >
                                 <i class=" fas fa-search "></i>
                             </div>
@@ -31,25 +29,6 @@
                                 <p class=" answer-text " ><?php the_content(); ?></p>
                             </div>
                         </div>
-
-                        <div class="answers answer-2 <?php implode('  ', get_post_class());  ?> " >
-                            <div class="icon-box" >
-                                <i class=" fas fa-search "></i>
-                            </div>
-                            <div class="text-info">
-                                <p class=" answer-text " ><?php the_content(); ?></p>
-                            </div>
-                        </div>
-
-                        <div class="answers answer-3 <?php implode('  ', get_post_class());  ?> " >
-                            <div class="icon-box" >
-                                <i class=" fas fa-search "></i>
-                            </div>
-                            <div class="text-info">
-                                <p class=" answer-text " ><?php the_content(); ?></p>
-                            </div>
-                        </div>
-
                         <?php
                         $i++;
                     endwhile;

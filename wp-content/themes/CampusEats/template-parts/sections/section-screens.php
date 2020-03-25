@@ -1,6 +1,6 @@
 <?php ?>
 <section id="screen-content" class="screens main-section alternate " >
-	<h3 class=" section-title" ><?php the_title(); ?></h3>
+	<h3 class=" section-title" >Screens</h3>
 	<section class="sub-section" >
 		<?php
 

@@ -1,6 +1,6 @@
 <?php ?>
 <section id="team-content" class="team main-section">
-    <h1><?php the_title(); ?></h1>
+    <h1>Meet the team</h1>
     <figure>
 	    <?php
 

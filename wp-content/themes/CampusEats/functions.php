@@ -38,9 +38,9 @@ add_action('wp_enqueue_scripts','loadCss');
 
 function loadJs(){
 	wp_register_script('fontawesome','https://kit.fontawesome.com/06a13ba95c.js');
-//	//  wp_register_script('myJs',get_template_directory_uri().'/js/main.js',[
-//		'fontawesome'
-//	]);
-	wp_enqueue_script( "fontawesome" );
+	  wp_register_script('myJs',get_template_directory_uri().'/js/main.js',[
+		'fontawesome'
+	]);
+	wp_enqueue_script( "myJs" );
 }
 add_action('wp_enqueue_scripts','loadJs');
