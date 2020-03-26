@@ -86,22 +86,21 @@
                   height: auto;
                   margin: auto;
                   transition: transform 500ms cubic-bezier(.5,-.75,.7,2);
-
-                  &:hover{
-                    transform: scale3d(1.3,1.3,1.3);
-                  }
-
                 }
 
-                &.unioncafe{
 
+                &:hover{
                   img{
-                    transition: transform 500ms cubic-bezier(.5,-.75,.7,2);
+                    transform: scale3d(1.3,1.3,1.3);
+                  }
+                }
 
-                    &:hover{
+                &.tag-union-cafe{
+
+                  &:hover{
+                    img{
                       transform: scale3d(1.1,1.1,1.1);
                     }
-
                   }
 
                 }

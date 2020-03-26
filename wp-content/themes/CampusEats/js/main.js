@@ -405,9 +405,10 @@ class testimonials extends base{
 
         let slideIsActive = false;
         let testimonials = document.getElementById('testimonials-content').querySelector('.sub-section').querySelectorAll('.testimonial').length/2;
+        testimonials = testimonials+1;
         for( let i = 0 ; i < testimonials ; i++ ) {
-            if( slideNumber !== i+1 ){
-                document.getElementById('testimonials-content').querySelector('.sub-section').classList.remove('slide-active-'+(i+1));
+            if( slideNumber !== i ){
+                document.getElementById('testimonials-content').querySelector('.sub-section').classList.remove('slide-active-'+i);
             }
         }
 
@@ -415,8 +416,8 @@ class testimonials extends base{
 
         let selfObject = this ;
         setTimeout(function () {
-            if( selfObject.slideNumber === testimonials ){
-                selfObject.slideNumber = 1;
+            if( selfObject.slideNumber === (testimonials-1) ){
+                selfObject.slideNumber = 0;
             }else{
                 selfObject.slideNumber = selfObject.slideNumber+1;
             }

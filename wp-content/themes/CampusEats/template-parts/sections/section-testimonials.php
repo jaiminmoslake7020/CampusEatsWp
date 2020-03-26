@@ -4,7 +4,10 @@
         <?php
 
         $args = array(
-            'category_name' => 'Testimonials'
+            'category_name' => 'Testimonials',
+            'meta_key' => 'order',
+            'orderby' => 'meta_value meta_value_num',
+            'order' => 'ASC'
         );
         $testimonials_query = new WP_Query($args);
 

@@ -5,7 +5,10 @@
             <div class=" app-cafes ">
                 <?php
                 $args = array(
-                    'category_name' => 'Cafes'
+                    'category_name' => 'Cafes',
+                    'meta_key' => 'order',
+                    'orderby' => 'meta_value meta_value_num',
+                    'order' => 'ASC'
                 );
                 $cafes_query = new WP_Query($args);
 
