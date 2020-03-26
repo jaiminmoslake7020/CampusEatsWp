@@ -2,6 +2,16 @@ let app = null;
 window.addEventListener('load',function () {
     app = new App();
     app.scroll.init();
+
+    document.getElementById('mainMenu').addEventListener('click',function () {
+        document.querySelector('.side-menu').classList.toggle('menu-activated');
+    });
+
+    document.querySelector('.side-menu').addEventListener('click',function () {
+        document.querySelector('.side-menu').classList.toggle('menu-activated');
+    });
+
+
 });
 
 
@@ -184,7 +194,7 @@ class screens extends base {
         let selfObject = this;
         Array.from( document.querySelectorAll('.screen-item:not(.active)>.article-title') , function ( el ) {
             el.addEventListener('click',function () {
-                console.log(this.parentElement);
+                // console.log(this.parentElement);
                 selfObject.animateScreen( this.parentElement );
             })
         });
@@ -197,6 +207,16 @@ class screens extends base {
         }
         screenItemActive.classList.remove('active');
         nextElementSibling.classList.add('active');
+        let screenItems = document.querySelectorAll('.screen-item');
+        for( let i = 0 ; i < screenItems.length ; i++ ) {
+            document.getElementById('screen-content').querySelector('.sub-section').classList.remove('screen-active-'+i);
+        }
+        Array.from(screenItems , function ( el , index ) {
+            if( el.classList.contains('active') ){
+                document.getElementById('screen-content').querySelector('.sub-section').classList.add('screen-active-'+index);
+            }
+        });
+        document.getElementById('screen-content').querySelector('.sub-section').classList.remove('screen-active-0');
         this.makePhoneAppearEffect( screenItemActive , nextElementSibling );
     }
 
@@ -325,22 +345,82 @@ class team extends base{
 
 class testimonials extends base{
 
+    get incrrement() {
+        return this._incrrement;
+    }
+
+    set incrrement(value) {
+        this._incrrement = value;
+    }
+
+    get slideNumber() {
+        return this._slideNumber;
+    }
+
+    set slideNumber(value) {
+        this._slideNumber = value;
+    }
+
     constructor() {
         super();
+        this._slideNumber = 1 ;
+        this._incrrement = true ;
+        this._stopInterval = 0 ;
+        this.init();
+    }
+
+    get stopInterval() {
+        return this._stopInterval;
+    }
+
+    set stopInterval(value) {
+        this._stopInterval = value;
     }
 
     init() {
         super.init();
+        let totalSlides = document.getElementById('testimonials-content').querySelector('.sub-section').querySelectorAll('.testimonial').length/2;
+
+        let selfObject = this;
+        // console.log( console.trace() );
+        let interval = setInterval(function () {
+            if( selfObject.stopInterval ){
+                clearInterval( interval );
+            }
+            // console.log( console.trace() );
+            selfObject.slide( selfObject.slideNumber );
+        },5000);
 
     }
 
     activate(id) {
         super.activate(id);
-        this.init()
     }
 
     deActivate(id) {
         super.deActivate(id);
+    }
+
+    slide( slideNumber ){
+
+        let slideIsActive = false;
+        let testimonials = document.getElementById('testimonials-content').querySelector('.sub-section').querySelectorAll('.testimonial').length/2;
+        for( let i = 0 ; i < testimonials ; i++ ) {
+            if( slideNumber !== i+1 ){
+                document.getElementById('testimonials-content').querySelector('.sub-section').classList.remove('slide-active-'+(i+1));
+            }
+        }
+
+        document.getElementById('testimonials-content').querySelector('.sub-section').classList.add( 'slide-active-'+slideNumber );
+
+        let selfObject = this ;
+        setTimeout(function () {
+            if( selfObject.slideNumber === testimonials ){
+                selfObject.slideNumber = 1;
+            }else{
+                selfObject.slideNumber = selfObject.slideNumber+1;
+            }
+        } , 5000 );
 
     }
 
@@ -349,6 +429,22 @@ class testimonials extends base{
 class scroll extends base{
     constructor() {
         super();
+
+        let aList = document.querySelectorAll('header nav>ul>li>a');
+        Array.from( aList , function ( el , index ) {
+            el.addEventListener('click', aClick );
+        });
+
+        aList = document.querySelectorAll('.side-menu nav>ul>li>a');
+        Array.from( aList , function ( el , index ) {
+            el.addEventListener('click', aClick );
+        });
+
+        aList = document.querySelectorAll('.footer-information ul>li>a');
+        Array.from( aList , function ( el , index ) {
+            el.addEventListener('click', aClick );
+        });
+
     }
 
     init() {
@@ -362,18 +458,18 @@ class scroll extends base{
             let sectionTopPoint = section.offsetTop ;
             let sectionBottomPoint = section.offsetTop+section.offsetHeight ;
 
-            if(  section.id === "top-content" ){
-                console.log(  sectionTopPoint );
-                console.log( usePageTop );
-                console.log(  sectionBottomPoint );
-
-                console.log(  sectionTopPoint <= usePageTop );
-                console.log( ( sectionTopPoint === 0 && usePageTop < 400 )  );
-                console.log( sectionBottomPoint > usePageTop   );
-                console.log( selfObject._pageStatus !== section.id  );
-                console.log( selfObject._pageStatus  );
-                console.log(  section.id  );
-            }
+            // if(  section.id === "top-content" ){
+            //     console.log(  sectionTopPoint );
+            //     console.log( usePageTop );
+            //     console.log(  sectionBottomPoint );
+            //
+            //     console.log(  sectionTopPoint <= usePageTop );
+            //     console.log( ( sectionTopPoint === 0 && usePageTop < 400 )  );
+            //     console.log( sectionBottomPoint > usePageTop   );
+            //     console.log( selfObject._pageStatus !== section.id  );
+            //     console.log( selfObject._pageStatus  );
+            //     console.log(  section.id  );
+            // }
 
             if( ( sectionTopPoint <= usePageTop || ( sectionTopPoint === 0 && usePageTop < 400 ) ) && sectionBottomPoint > usePageTop && selfObject._pageStatus !== section.id ){
                 console.log('at '+section.id);
@@ -387,17 +483,17 @@ class scroll extends base{
                     case "needs-content" :
                         app.needs.activate( selfObject._pageStatus );
                         app.topSection.deActivate( "top-content" );
-                        app.topSection.deActivate( "features-content" );
+                        app.features.deActivate( "features-content" );
                         break;
                     case "features-content" :
                         app.features.activate( selfObject._pageStatus );
-                        app.needs.deActivate( "screen-content" );
-                        app.screens.deActivate( "needs-content" );
+                        app.screens.deActivate( "screen-content" );
+                        app.needs.deActivate( "needs-content" );
                         break;
                     case "screen-content" :
                         app.screens.activate( selfObject._pageStatus );
-                        app.features.deActivate( "testimonials-content" );
-                        app.testimonials.deActivate( "features-content" );
+                        app.testimonials.deActivate( "testimonials-content" );
+                        app.features.deActivate( "features-content" );
                         break;
                     case "testimonials-content" :
                         app.testimonials.activate( selfObject._pageStatus );
@@ -417,7 +513,30 @@ class scroll extends base{
 }
 
 
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    var isEscape = false;
+    if ("key" in evt) {
+        isEscape = (evt.key === "Escape" || evt.key === "Esc");
+    } else {
+        isEscape = (evt.keyCode === 27);
+    }
+    if (isEscape) {
+        document.querySelector('.side-menu').classList.remove('menu-activated');
+    }
+};
 
+
+let aClick = ( e ) => {
+    e.preventDefault();
+    let href = e.target.getAttribute('href');
+    href = href.replace('#','');
+    let offsetTop = document.getElementById(href).offsetTop-100;
+    window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+    });
+};
 
 
 

@@ -1,8 +1,39 @@
 .team {
     display: grid;
     grid-template-rows: .1fr 1fr;
-    background-color: $color__white;
+    @media screen and (max-width: 600px){
+        grid-template-rows: auto auto;
+    }
+
+    .sub-section{
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all 1s linear;
+        pointer-events: none;
+    }
+
+    &.active{
+
+        .sub-section{
+            pointer-events: auto;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+
+    h3{
+        color: $color__white;
+    }
+
+    p{
+        color: $color__white;
+    }
 }
+
+
+
 .team h1 {
     flex-basis: 100%;
 }
@@ -11,21 +42,32 @@
     flex-flow: row wrap;
     text-align: center;
     justify-content: center;
+    @media screen and (max-width: 900px){
+        justify-content: space-around;
+    }
 }
 .team figure div {
     flex-basis: 25%;
+    @media screen and (max-width: 900px){
+        flex-basis: 35%;
+    }
+    @media screen and (max-width: 600px){
+        flex-basis: 100%;
+    }
 }
 .team figure img {
+    background-color: white;
     width: 55%;
     height: auto;
     padding: 0.8rem;
     box-sizing: border-box;
     border-radius: 50%;
-    border-left: 1px solid $color__orange;
-    border-right: 1px solid $color__orange;
+    border-left: 1px solid $color__green;
+    border-right: 1px solid $color__green;
 }
 .team figure img:hover {
     transform: rotate(90deg);
     transform: scale(1.2);
     transition: all .9s;
 }
+

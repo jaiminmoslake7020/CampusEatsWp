@@ -19,14 +19,14 @@
         ?>
         </h1>
         <?php wp_nav_menu ([
-        'theme_location'=>'top-menu',
-        'menu_class'=>'menu-primary-ul menu additional-menu ',
-        'container'=>'nav',
-        'container_class'=>'menu-primary-top',
-        'link_before'=>'<span class="visually-hidden">',
-            'link_end'=>'</span>',
+            'theme_location'=>'top-menu',
+            'menu_class'=>'menu-primary-ul menu additional-menu ',
+            'container'=>'nav',
+            'container_class'=>'header-menu',
         ]);?>
+        <div class="button-con" >
+            <button type="button" id="mainMenu"><i class="fas fa-hamburger"></i></button>
+        </div>
     </div>
-
 </header>
 <main>
