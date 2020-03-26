@@ -41,13 +41,14 @@ function loadCss(){
 	wp_register_style('fonts','https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700,900&display=swap');
     wp_register_style('myStyles',get_stylesheet_uri(),["fonts"]);
 	wp_enqueue_style( "myStyles" );
-	wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
+	wp_enqueue_style('campusEats_fontawsome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css');
+//	wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
 }
 add_action('wp_enqueue_scripts','loadCss');
 
 function loadJs(){
 	wp_register_script('fontawesome','https://kit.fontawesome.com/06a13ba95c.js');
-	  wp_register_script('myJs',get_template_directory_uri().'/js/main.js',[
+	wp_register_script('myJs',get_template_directory_uri().'/js/main.js',[
 		'fontawesome'
 	]);
 	wp_enqueue_script( "myJs" );
