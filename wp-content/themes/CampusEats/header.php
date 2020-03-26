@@ -4,23 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <header>
     <div class="site-header">
-        <h1><img src="images/LogoCampusEats.png" alt="logo" class="logopng"></h1>
-        <nav class="header-menu">
-            <ul>
-                <li><a href="#Cafes">Cafes</a></li>
-                <li><a href="#Features">Features</a></li>
-                <li><a href="#Needs">Needs</a></li>
-                <li><a href="#Screens">Screens</a></li>
-                <li><a href="#Team">Team</a></li>
-                <li><a href="#Testimonials">Testimonials</a></li>
-            </ul>
-        </nav>
+        <h1>
+        <?php
+            if ( has_custom_logo() ) {
+                echo get_custom_logo();
+            } else {
+                echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+            }
+        ?>
+        </h1>
+        <?php wp_nav_menu ([
+            'theme_location'=>'top-menu',
+            'menu_class'=>'menu-primary-ul menu additional-menu ',
+            'container'=>'nav',
+            'container_class'=>'header-menu',
+        ]);?>
+        <div class="button-con" >
+            <button type="button" id="mainMenu"><i class="fas fa-hamburger"></i></button>
+        </div>
     </div>
 </header>
 <main>
