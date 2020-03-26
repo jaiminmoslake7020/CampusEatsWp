@@ -1,4 +1,4 @@
-<section id="testimonials-content" class="testimonials main-section " >
+<section id="testimonials-content" class="testimonials main-section alternate " >
     <h3 class=" section-title" >Testimonials</h3>
     <section class="sub-section" >
 	    <?php
@@ -18,9 +18,9 @@
 				    $activeCLass = ' active ';
 			    }
 			    ?>
-                <div class="testimonial testimonial-user-<?= ( $i + 1 ); ?> <?php implode( '  ', get_post_class() ); ?>">
+                <div <?php post_class( ' testimonial testimonial-user-'.( $i + 1 ).' ' , get_the_ID()  ); ?>  >
                     <div class="icon-box">
-                        <img src="<?php the_post_thumbnail_url(); ?>"/>
+                        <img src="<?php the_post_thumbnail_url(); ?>"  alt="<?php the_title(); ?>" />
                     </div>
                     <div class="text-info">
                         <h3><?php the_title(); ?></h3>

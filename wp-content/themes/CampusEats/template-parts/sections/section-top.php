@@ -15,10 +15,10 @@
 						$cafes_query->the_post();
 						$activeCLass = "";
 						if ( true ) {
-							$activeCLass = ' active ';
+							//$activeCLass = ' active ';
 						}
 						?>
-                        <div class="cafe <?= $activeCLass; ?> <?php implode( '  ', get_post_class() ); ?> ">
+                        <div <?php post_class( ' cafe '.$activeCLass.' ' , get_the_ID()  ); ?> >
                             <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" />
                         </div>
 						<?php
