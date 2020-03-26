@@ -6,7 +6,9 @@
 
         $args = array(
             'category_name' => 'Screens',
-            'orderby' => ''
+            'meta_key' => 'order',
+            'orderby' => 'meta_value meta_value_num',
+            'order' => 'ASC'
         );
         $screens_query = new WP_Query($args);
 

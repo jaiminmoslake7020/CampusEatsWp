@@ -7,7 +7,9 @@
 
             $args = array(
                 'category_name' => 'Features',
-                'orderby' => ''
+                'meta_key' => 'order',
+                'orderby' => 'meta_value meta_value_num',
+                'order' => 'ASC'
             );
             $features_query = new WP_Query($args);
 

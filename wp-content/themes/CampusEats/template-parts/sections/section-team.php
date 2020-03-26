@@ -7,7 +7,9 @@
 
             $args = array(
                 'category_name' => 'Team',
-                'orderby' => ''
+                'meta_key' => 'order',
+                'orderby' => 'meta_value meta_value_num',
+                'order' => 'ASC'
             );
             $team_query = new WP_Query($args);
 

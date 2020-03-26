@@ -25,6 +25,17 @@
         margin-left: 0;
         transition: margin-left 1s ease-in-out;
 
+        &.slide-active-0{
+            margin-left: 0;
+
+            @media screen and (max-width: 900px){
+                margin-left: 0;
+            }
+            @media screen and (max-width: 600px){
+                margin-left: 0;
+            }
+        }
+
         &.slide-active-1{
             margin-left: -33.33vw;
 

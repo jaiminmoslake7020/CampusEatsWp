@@ -11,7 +11,6 @@
         </div>
         <div class="footer-information">
             <h2>Tags: </h2>
-
 	        <?php wp_nav_menu([
 		        'theme_location'=>'bottom-left-menu',
 		        'menu_class'=>'menu-secondary-ul menu additional-menu ',
