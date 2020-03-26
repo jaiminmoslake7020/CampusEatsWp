@@ -8,7 +8,6 @@ get_template_part('template-parts/sections/section','screens');
 get_template_part('template-parts/sections/section','testimonials');
 get_template_part('template-parts/sections/section','team');
 
-
 get_footer();
 
 
