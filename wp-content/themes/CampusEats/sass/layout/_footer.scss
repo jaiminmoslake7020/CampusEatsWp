@@ -127,15 +127,12 @@ footer{
     }
 
     a {
-        i{
-            border-bottom: none;
-            color: $color__orange;
-        }
-
+        padding:5px;
+        margin: 10px;
+        border-bottom: none;
+        color: $color__orange;
         &:hover{
-            i{
                 color: $color__orangedark;
-            }
         }
     }
 }
@@ -178,5 +175,7 @@ footer{
     }
 
 }
+
+
 
 

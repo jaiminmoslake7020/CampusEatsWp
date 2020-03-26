@@ -1412,11 +1412,13 @@ footer {
   display: flex;
   flex-flow: row nowrap;
 }
-.footer-icons a i {
+.footer-icons a {
+  padding: 5px;
+  margin: 10px;
   border-bottom: none;
   color: #f15a24;
 }
-.footer-icons a:hover i {
+.footer-icons a:hover {
   color: #b10909;
 }
 
@@ -1477,6 +1479,18 @@ ul {
 a {
   text-decoration: none;
   color: #000;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
 
 /* HEEADER ============ */

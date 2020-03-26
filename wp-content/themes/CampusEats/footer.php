@@ -16,8 +16,6 @@
 			<?php wp_nav_menu( [
 				'theme_location'  => 'bottom-left-menu',
 				'menu_class'      => 'menu-secondary-ul menu additional-menu ',
-				'link_before'	    =>	'<span class="visually-hidden">',
-				'link_after'	    =>	'</span>',
 				'container'       => 'nav',
 				'container_class' => 'menu-secondary-bottom'
 			] ); ?>
@@ -51,9 +49,9 @@
 		        'container'       => 'nav',
 		        'container_class' => 'menu-social-bottom'
 	        ] ); ?>
-            <div class="footer-copyright">
-                <p>&copy;2020 awesome7 All right are reserved</p>
-            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy;2020 awesome7 All right are reserved</p>
         </div>
 
 </footer>
