@@ -130,10 +130,17 @@ footer{
         padding:5px;
         margin: 10px;
         border-bottom: none;
-        color: $color__orange;
-        &:hover{
-                color: $color__orangedark;
+
+        &::before{
+            font-family: "Font Awesome 5 Brands";
+            font-size: 25px;
+            color: $color__orange;
         }
+
+        &:hover::before{
+            color: $color__orangedark;
+        }
+
     }
 }
 

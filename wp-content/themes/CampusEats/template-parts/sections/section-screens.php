@@ -8,7 +8,8 @@
             'category_name' => 'Screens',
             'meta_key' => 'order',
             'orderby' => 'meta_value_num',
-            'order' => 'ASC'
+            'order' => 'ASC',
+            'posts_per_page'=>20
         );
         $screens_query = new WP_Query($args);
 

@@ -1,9 +1,6 @@
 <?php
 $args = array(
-    'category_name' => 'Site-Info',
-    'meta_key' => 'order',
-    'orderby' => 'meta_value meta_value_num',
-    'order' => 'ASC'
+    'category_name' => 'Site-Info'
 );
 $site_info_query = new WP_Query($args);
 
@@ -16,9 +13,7 @@ if ($site_info_query->have_posts()) :
         <div <?php post_class(' site-info ' . $activeCLass . ' ', get_the_ID()); ?> >
             <h2><?php the_title(); ?></h2>
             <p>
-                <q>
-                    <?php the_content(); ?>
-                </q>
+                <?php the_content(); ?>
             </p>
         </div>
         <?php

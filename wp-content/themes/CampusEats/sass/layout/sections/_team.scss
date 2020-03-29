@@ -25,10 +25,12 @@
 
     h3{
         color: $color__white;
+        font-weight: 700;
     }
 
     p{
         color: $color__white;
+        font-weight: 100;
     }
 }
 
@@ -53,6 +55,7 @@
     }
     @media screen and (max-width: 600px){
         flex-basis: 100%;
+        margin-bottom: 20px;
     }
 }
 .team figure img {

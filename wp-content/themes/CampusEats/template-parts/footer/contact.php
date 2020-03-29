@@ -1,9 +1,6 @@
 <?php
 $args = array(
-	'category_name' => 'Contact Us',
-	'meta_key' => 'order',
-	'orderby' => 'meta_value meta_value_num',
-	'order' => 'ASC'
+	'category_name' => 'Contact Us'
 );
 $contact_query = new WP_Query($args);
 
@@ -12,9 +9,6 @@ if ($contact_query->have_posts()) :
 	while ($contact_query->have_posts()) :
 		$contact_query->the_post();
 		$activeCLass = "";
-		if (true) {
-			//$activeCLass = ' active ';
-		}
 		?>
 		<div <?php post_class(' contact-us ' . $activeCLass . ' ', get_the_ID()); ?> >
 			<h2><?php the_title(); ?></h2>

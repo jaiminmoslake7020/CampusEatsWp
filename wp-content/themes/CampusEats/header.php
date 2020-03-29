@@ -9,15 +9,15 @@
 <body <?php body_class(); ?>>
 <header>
     <div class="site-header">
-        <h1>
         <?php
             if ( has_custom_logo() ) {
-                echo get_custom_logo();
+                $custom_logo_id = get_theme_mod( 'custom_logo' );
+                $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                echo '<h1 style="background-image:url('.$image[0].');" ><span class="visually-hidden" >'. get_bloginfo( 'name' ) .'</span></h1>';
             } else {
-                echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+                echo '<h1 >'. get_bloginfo( 'name' ) .'</h1>';
             }
         ?>
-        </h1>
         <?php wp_nav_menu ([
             'theme_location'=>'top-menu',
             'menu_class'=>'menu-primary-ul menu additional-menu ',

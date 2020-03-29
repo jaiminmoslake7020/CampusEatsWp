@@ -1,9 +1,6 @@
 <?php
 $args               = array(
-	'category_name' => 'Subscription',
-	'meta_key'      => 'order',
-	'orderby'       => 'meta_value meta_value_num',
-	'order'         => 'ASC'
+	'category_name' => 'Subscription'
 );
 $subscription_query = new WP_Query( $args );
 

@@ -372,6 +372,14 @@ h2 {
   -moz-box-shadow: -17px 28px 16px -25px rgba(241, 90, 36, 0.35);
   box-shadow: -17px 28px 16px -25px rgba(241, 90, 36, 0.35);
 }
+.site-header h1 {
+  color: #f15a24;
+  width: 90px;
+  height: 38px;
+  background-size: cover;
+  background-position-x: 0;
+  background-position-y: 0;
+}
 .site-header .button-con {
   flex: 0 0 0;
   overflow: hidden;
@@ -436,7 +444,7 @@ h2 {
 }
 
 .site-header h1 {
-  margin: 0;
+  margin: 0 10px;
 }
 
 /* MAIN CONTENT ============ */
@@ -565,7 +573,7 @@ body {
   -webkit-box-shadow: 18px 28px 16px -25px rgba(241, 90, 36, 0.35);
   -moz-box-shadow: 18px 28px 16px -25px rgba(241, 90, 36, 0.35);
   box-shadow: 18px 28px 16px -25px rgba(241, 90, 36, 0.35);
-  transform: rotateZ(90deg);
+  transform: rotateZ(5deg);
   transition: all 1s linear;
   opacity: 0;
 }
@@ -995,11 +1003,12 @@ body {
   opacity: 1;
 }
 .screens .sub-section .screen-item.active .screen-box.active .screen-regular img {
-  opacity: 1;
+  opacity: 0;
   transform: scale3d(0.3, 0.3, 0.3);
   transition: transform 1.5s cubic-bezier(1, -0.51, 0, 1.56) 300ms, margin-top 100ms ease-in-out 0ms;
 }
 .screens .sub-section .screen-item.active .screen-box.active .screen-regular.active img {
+  opacity: 1;
   height: 80vh;
   width: auto;
   margin: auto;
@@ -1159,7 +1168,7 @@ body {
   border: 5px solid #009245;
 }
 .testimonials .sub-section .testimonial {
-  width: 300px;
+  width: 350px;
   min-height: 300px;
   border-radius: 20px;
   box-sizing: border-box;
@@ -1172,9 +1181,9 @@ body {
   max-width: 40%;
   margin: auto;
   padding: 15px;
-  -webkit-box-shadow: 3px 4px 20px 2px #5a1414;
-  -moz-box-shadow: 3px 4px 20px 2px #5a1414;
-  box-shadow: 3px 4px 20px 2px #5a1414;
+  -webkit-box-shadow: 1px 1px 2px 1px #ffd2d2;
+  -moz-box-shadow: 1px 1px 2px 1px #ffd2d2;
+  box-shadow: 1px 1px 2px 1px #ffd2d2;
 }
 .testimonials .sub-section .testimonial .icon-box {
   flex: 1 0 100%;
@@ -1230,9 +1239,11 @@ body {
 }
 .team h3 {
   color: #fff;
+  font-weight: 700;
 }
 .team p {
   color: #fff;
+  font-weight: 100;
 }
 
 .team h1 {
@@ -1262,6 +1273,7 @@ body {
 @media screen and (max-width: 600px) {
   .team figure div {
     flex-basis: 100%;
+    margin-bottom: 20px;
   }
 }
 
@@ -1416,9 +1428,13 @@ footer {
   padding: 5px;
   margin: 10px;
   border-bottom: none;
+}
+.footer-icons a::before {
+  font-family: "Font Awesome 5 Brands";
+  font-size: 25px;
   color: #f15a24;
 }
-.footer-icons a:hover {
+.footer-icons a:hover::before {
   color: #b10909;
 }
 
@@ -1599,6 +1615,9 @@ input {
   width: 300px;
   height: 4vh;
   margin-top: 1rem;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 /* media ======================= */

@@ -18,8 +18,18 @@
         </div>
 
         <div class="footer-contact">
-            <?php get_template_part('template-parts/footer/subscription'); ?>
-           <?php get_template_part('template-parts/footer/contact'); ?>
+            <div class="footer-subscribe">
+                <form action="">
+                    <h2>
+                        <lable>
+                            Subscribe For More Info
+                        </lable>
+                    </h2><br>
+                    <input type="text" placeholder="Enter your Email">
+                    <button>Subscribe</button>
+                </form>
+            </div>
+            <?php get_template_part('template-parts/footer/contact'); ?>
         </div>
 
         <div class="footer-icons">

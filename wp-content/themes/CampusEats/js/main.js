@@ -166,8 +166,8 @@ class screens extends base {
         super.init();
 
         let selfObject = this;
-        this._stopInterval = 0 ;
-        this.doNotInterRuptInterval = 0;
+        Screen.stopInterval = 0 ;
+        Screen.doNotInterRuptInterval = 0;
         new Promise(function (resolve, reject) {
             selfObject.makeTitleInSpanList();
             resolve();
@@ -191,13 +191,15 @@ class screens extends base {
         let selfObject = this;
         //selfObject.makePhoneAppearEffectStart( screenItemActive );
         let interval = setInterval(function () {
-            if( selfObject.stopInterval ){
+            if( Screen.stopInterval ){
                 clearInterval( interval );
             }
-            if( !self.doNotInterRuptInterval ){
+            if( !Screen.doNotInterRuptInterval ){
                 selfObject.animateScreen( null );
             }else{
-                self.doNotInterRuptInterval = 0 ;
+                setTimeout(function () {
+                    Screen.doNotInterRuptInterval = 0 ;
+                },3000);
             }
         },5000);
         this.setupAnimationEvents();
@@ -208,7 +210,7 @@ class screens extends base {
         Array.from( document.querySelectorAll('.screen-item:not(.active)>.article-title') , function ( el ) {
             el.addEventListener('click',function () {
                 // console.log(this.parentElement);
-                selfObject.doNotInterRuptInterval = 1 ;
+                Screen.doNotInterRuptInterval = 1 ;
                 selfObject.animateScreen( this.parentElement );
             })
         });
@@ -550,7 +552,7 @@ let aClick = ( e ) => {
     let offsetTop = document.getElementById(href).offsetTop-100;
     window.scrollTo({
         top: offsetTop,
-        behavior: 'smooth',
+        behavior: 'smooth'
     });
 };
 

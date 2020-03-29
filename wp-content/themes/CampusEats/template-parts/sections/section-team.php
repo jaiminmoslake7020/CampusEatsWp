@@ -25,8 +25,8 @@
                     ?>
                     <div <?php post_class(' team-member ' . $activeCLass . ' ', get_the_ID()); ?> >
                         <img src="<?php the_post_thumbnail_url(); ?>"/>
-                        <p><?php the_title(); ?></p>
-                        <h3><?php the_content(); ?></h3>
+                        <h3><?php the_title(); ?></h3>
+                        <?php the_content(); ?>
                     </div>
                     <?php
                     $i++;
