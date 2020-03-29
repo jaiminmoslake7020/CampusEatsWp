@@ -16,7 +16,7 @@ if ($contact_query->have_posts()) :
 			//$activeCLass = ' active ';
 		}
 		?>
-		<div <?php post_class(' cafe ' . $activeCLass . ' ', get_the_ID()); ?> >
+		<div <?php post_class(' contact-us ' . $activeCLass . ' ', get_the_ID()); ?> >
 			<h2><?php the_title(); ?></h2>
             <?php the_content(); ?>
 		</div>

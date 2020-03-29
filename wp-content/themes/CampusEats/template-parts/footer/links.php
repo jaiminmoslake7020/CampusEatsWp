@@ -12,13 +12,8 @@ if ( $links_query->have_posts() ) :
 	while ( $links_query->have_posts() ) :
 		$links_query->the_post();
 		$activeCLass = "";
-		if ( true ) {
-			//$activeCLass = ' active ';
-		}
 		?>
-
-                <a <?php post_class( ' cafe ' . $activeCLass . ' ', get_the_ID() ); ?> href=""><?php the_post_thumbnail(); ?></a>
-
+            <a <?php post_class( ' download-link ' . $activeCLass . ' ', get_the_ID() ); ?> href=""><?php the_post_thumbnail(); ?></a>
 		<?php
 		$i ++;
 	endwhile;

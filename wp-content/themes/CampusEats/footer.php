@@ -2,10 +2,7 @@
 <footer>
     <div class="footer-class">
         <div class="footer-text">
-            <h2>Campus Eats</h2>
-            <p><q>An application that will help you to access all the cafes that are in college campus and make it easy
-                    for you to order food from anywhere anytime. Download the app now , order and grab your snack.</q>
-            </p>
+            <?php get_template_part('template-parts/footer/site-info'); ?>
             <div class="download-btn">
               <?php get_template_part('template-parts/footer/links'); ?>
             </div>
@@ -21,6 +18,7 @@
         </div>
 
         <div class="footer-contact">
+            <?php get_template_part('template-parts/footer/subscription'); ?>
            <?php get_template_part('template-parts/footer/contact'); ?>
         </div>
 
@@ -39,6 +37,16 @@
         </div>
 
 </footer>
+
+<div class="side-menu">
+    <?php wp_nav_menu( [
+        'theme_location'  => 'side-menu',
+        'menu_class'      => ' menu side-bar-menu  ',
+        'container'       => 'nav',
+        'container_class' => 'header-menu'
+    ] ); ?>
+</div>
+
 <?php wp_footer(); ?>
 </body>
 </html>

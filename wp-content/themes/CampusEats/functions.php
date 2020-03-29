@@ -28,6 +28,7 @@ if ( ! function_exists( 'CampusEats_setup' ) ) :
 			   'top-social-menu'=>'Top Social Menu',
 			   'bottom-left-menu'=>'Bottom Left Menu',
 			   'bottom-right-menu'=>'Bottom Right Menu',
+               'side-menu'=>'Side Menu',
 		   ]
      );
 
