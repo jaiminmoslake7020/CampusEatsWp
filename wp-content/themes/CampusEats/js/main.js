@@ -531,7 +531,8 @@ document.onkeydown = function(evt) {
 let aClick = ( e ) => {
     e.preventDefault();
     let href = e.target.getAttribute('href');
-    href = href.replace('#','');
+    hrefArray = href.split('#');
+    href = hrefArray[1];
     let offsetTop = document.getElementById(href).offsetTop-100;
     window.scrollTo({
         top: offsetTop,
