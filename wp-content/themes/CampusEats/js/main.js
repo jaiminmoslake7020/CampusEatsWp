@@ -142,6 +142,14 @@ class screens extends base {
         this._stopInterval = value;
     }
 
+    get doNotInterRuptInterval() {
+        return this._doNotInterRuptInterval;
+    }
+
+    set doNotInterRuptInterval(value) {
+        this._doNotInterRuptInterval = value;
+    }
+
     constructor(){
         super();
         this.makeTitleInSpanList();
@@ -159,6 +167,7 @@ class screens extends base {
 
         let selfObject = this;
         this._stopInterval = 0 ;
+        this.doNotInterRuptInterval = 0;
         new Promise(function (resolve, reject) {
             selfObject.makeTitleInSpanList();
             resolve();
@@ -185,7 +194,11 @@ class screens extends base {
             if( selfObject.stopInterval ){
                 clearInterval( interval );
             }
-            selfObject.animateScreen( null );
+            if( !self.doNotInterRuptInterval ){
+                selfObject.animateScreen( null );
+            }else{
+                self.doNotInterRuptInterval = 0 ;
+            }
         },5000);
         this.setupAnimationEvents();
     }
@@ -195,6 +208,7 @@ class screens extends base {
         Array.from( document.querySelectorAll('.screen-item:not(.active)>.article-title') , function ( el ) {
             el.addEventListener('click',function () {
                 // console.log(this.parentElement);
+                selfObject.doNotInterRuptInterval = 1 ;
                 selfObject.animateScreen( this.parentElement );
             })
         });
