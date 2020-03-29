@@ -7,8 +7,7 @@
                     for you to order food from anywhere anytime. Download the app now , order and grab your snack.</q>
             </p>
             <div class="download-btn">
-                <a href=""><img src="images/google-play.png" class="google"></a>
-                <a href=""><img src="images/app-store.png" class="apple"></a>
+              <?php get_template_part('template-parts/footer/links'); ?>
             </div>
         </div>
         <div class="footer-information">
@@ -22,22 +21,7 @@
         </div>
 
         <div class="footer-contact">
-            <div class="footer-subscribe">
-                <form action="">
-                    <h2>
-                        <label>
-                            Subscribe For More Info
-                        </label>
-                    </h2><br>
-                    <input type="text" placeholder="Enter your Email">
-                    <button>Subscribe</button>
-                </form>
-            </div>
-            <h2>Contact Us @</h2>
-            <p>
-                <i class="fas fa-envelope"></i>
-                <!-- https://fontawesome.com/icons/envelope?style=solid -->
-                awesome7@gmail.com</p>
+           <?php get_template_part('template-parts/footer/contact'); ?>
         </div>
 
         <div class="footer-icons">

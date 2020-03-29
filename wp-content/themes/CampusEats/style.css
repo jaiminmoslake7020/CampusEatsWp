@@ -1493,14 +1493,14 @@ a {
   overflow: hidden;
 }
 
-/* HEEADER ============ */
-.download-btn .google {
+/* HEADER ============ */
+.home .download-btn .tag-android img {
   max-width: 29% !important;
   height: auto;
   padding: 1rem;
 }
 
-.download-btn .apple {
+.home .download-btn .tag-ios img {
   max-width: 31.4% !important;
   height: auto;
   padding: 1rem;
