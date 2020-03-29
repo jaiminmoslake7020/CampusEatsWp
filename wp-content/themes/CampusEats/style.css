@@ -573,13 +573,13 @@ body {
   -webkit-box-shadow: 18px 28px 16px -25px rgba(241, 90, 36, 0.35);
   -moz-box-shadow: 18px 28px 16px -25px rgba(241, 90, 36, 0.35);
   box-shadow: 18px 28px 16px -25px rgba(241, 90, 36, 0.35);
-  transform: rotateZ(5deg);
+  transform: translateY(10px);
   transition: all 1s linear;
   opacity: 0;
 }
 .top .sub-section .app-info .app-cafes .cafe.active {
   opacity: 1;
-  transform: rotateZ(0deg);
+  transform: translateY(0);
 }
 .top .sub-section .app-info .app-cafes .cafe img {
   width: 80%;
