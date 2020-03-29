@@ -13,9 +13,9 @@
             if ( has_custom_logo() ) {
                 $custom_logo_id = get_theme_mod( 'custom_logo' );
                 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                echo '<h1 style="background-image:url('.$image[0].');" ><span class="visually-hidden" >'. get_bloginfo( 'name' ) .'</span></h1>';
+                echo '<a href="'.site_url().'" ><h1 style="background-image:url('.$image[0].');" ><span class="visually-hidden" >'. get_bloginfo( 'name' ) .'</span></h1></a>';
             } else {
-                echo '<h1 >'. get_bloginfo( 'name' ) .'</h1>';
+                echo '<a href="'.site_url().'" ><h1 >'. get_bloginfo( 'name' ) .'</h1></a>';
             }
         ?>
         <?php wp_nav_menu ([
