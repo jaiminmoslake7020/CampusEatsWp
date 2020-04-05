@@ -39,7 +39,7 @@
                     $args = array(
                         'category_name' => 'Screens',
                         'posts_per_page' => 1,
-                        'order_by' => 'rand'
+                        'orderby' => 'rand'
                     );
                     $cafes_query = new WP_Query($args);
 

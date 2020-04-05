@@ -1,11 +1,11 @@
 
-a[href="https://facebook.com"]::before{
+a[href="https://www.facebook.com/Campus-Eats-104050231263329/?view_public_for=104050231263329"]::before{
     font-family: "Font Awesome 5 Brands";
     content: '\f082' ;
     color: #f15a24;
 }
 
-a[href="https://twitter.com"]::before{
+a[href="https://twitter.com/Awesome97185543"]::before{
     font-family: "Font Awesome 5 Brands";
     content: '\f099' ;
     color: #f15a24;;
@@ -13,7 +13,7 @@ a[href="https://twitter.com"]::before{
 
 a[href="https://youtube.com"]::before{
     font-family: "Font Awesome 5 Brands";
-    content: '\f0e1' ;
+    content: '\f167' ;
     color: #f15a24;;
 }
 
