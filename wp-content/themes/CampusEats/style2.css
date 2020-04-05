@@ -1,14 +1,14 @@
 
-a[href="https://facebook.com"]::before{
+a[href="https://www.facebook.com/Campus-Eats-104050231263329/?view_public_for=104050231263329"]::before{
     content: '\f082' ;
 }
 
-a[href="https://twitter.com"]::before{
+a[href="https://twitter.com/Awesome97185543"]::before{
     content: '\f099' ;
 }
 
 a[href="https://youtube.com"]::before{
-    content: '\f0e1' ;
+    content: '\f167' ;
 }
 
 a[href="https://instagram.com"]::before{
@@ -18,4 +18,3 @@ a[href="https://instagram.com"]::before{
 a[href="https://pinterest.com"]::before{
     content: '\f0d3' ;
 }
-
